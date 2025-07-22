@@ -1,0 +1,73 @@
+{
+  "HeadersContent": {
+    "navItem1": "Ramkali basseynlar",
+    "navItem2": "Shishiriladigan basseynlar"
+  },
+  "HeroContent": {
+    "title": "Mavsumiy sotuv!",
+    "cardTitle1": "Hovuzni bepul yetkazib berish",
+    "cardDesc1": "Biz mijozlarimizni qadrlaymiz, siz bizning xizmatimiz sifatiga ishonch hosil qilishingiz mumkin!",
+    "cardTitle2": "Sovg'a sifatida maxsus kimyoviy moddalar",
+    "cardDesc2": "Hovuz uchun maxsus tozalash kimyoviy moddalari - bepul",
+    "cardTitle3": "Sifat kafolati",
+    "cardDesc3": "Barcha INTEX mahsulotlari originaldir"
+  },
+  "FramePoolsPart": {
+    "title": "Ramkali basseynlar",
+    "button": "Buyurtma qilish"
+  },
+  "InflatablePoolsPart": {
+    "title": "Shishiriladigan basseynlar",
+    "button": "Buyurtma qilish"
+  },
+  "FreeShippingPart":{
+    "title": "Tekin yetkazib berish",
+    "desc": "Toshkent shahri ichida yetkazib berish bepul (shahar tashqarisida yetkazib berish alohida to'lanadi)",
+    "button": "Buyurtma berish"
+  },
+  "ForClientsPart":{
+    "title": "Mijozlarni qadrlash",
+    "conTitle1": "Tajriba",
+    "conDesc1": "Xodimlarimizning professionalligi",
+    "conTitle2": "Yetkazib berish",
+    "conDesc2": "Shahar bo’ylab bepul yetkazib berish",
+    "conTitle3": "Sifat",
+    "conDesc3": "Chidamli, sifatli basseynlar"
+  },
+  "InTashkent":{
+    "title":"Intex basseynlari Toshkentda",
+    "desc": "Intex basseynlari - bu butun oila uchun yoqimli dam olish uchun mo'ljallangan arzon, yuqori sifatli, ishonchli va ekologik toza mahsulotlar. Basseyn har qanday hovliga to'liq o'rnatilishi va yozda faol foydalanilishi mumkin. Basseyn sizga yorqin his-tuyg'ularni beradi va issiq yoz kunlarida sizni jaziramadan qutqaradi.",
+    "desc2": "Intex Basseynlari afzalliklarning kengligi bilan ajralib turadi, quyida ulardan eng muhimlarini ajratib ko'rsatish mumkin:",
+    "text":[
+        "Chidamlilik",
+        "O'rnatish uchun oson oson",
+        "Chiroyli va yorqin ranglar",
+        "Zamonaviy dizayn",
+        "Yuqori sifatli"
+    ]
+  },
+  "footer":{
+    "title": "Bepul konsultatsiya yordami uchun",
+    "inputText1":"Ismingiz",
+    "inputText2":"Telefon raqamingiz",
+    "button": "Konsultatsiya olish",
+    "workTime": "Ish vaqti",
+    "afterWorkTime": "Dam olish kunlarisiz"
+  },
+  "orderModal":{
+    "inputText1": "Ismingiz",
+    "inputText2": "Raqamingiz",
+    "inputText3": "Manzilingiz",
+    "button": "Buyurtma berish"
+  },
+  "modalSuccess":{
+    "title":"Rahmat!",
+    "desc":"Buyurtmangiz muvaffaqiyatli ro’yxatdan o’tdi. Yaqin vaqt oralig’ida siz bilan bog’lanamiz"
+  },
+  "consultationModal":{
+    "title": "Konsultatsiya olish",
+    "inputText1": "Ismingiz",
+    "inputText2": "Raqamingiz",
+    "button": "Buyurtma berish"
+  }
+}
