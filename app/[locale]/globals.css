@@ -5,3 +5,16 @@ html{
     scroll-behavior: smooth;
 }
 
+:root {
+    --clr-violet: #a259ff;
+    --clr-grey: #3B3B3B
+  }
+
+.site-main {
+    flex: 1;
+  }
+  
+  .lang-wrapper:hover > .lang-popup {
+    height: 60px;
+    padding: 8px;
+  }
