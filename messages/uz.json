@@ -53,6 +53,7 @@
     "afterWorkTime": "Dam olish kunlarisiz"
   },
   "orderModal":{
+    "title": "Konsultatsiya olish",
     "inputText1": "Ismingiz",
     "inputText2": "Raqamingiz",
     "inputText3": "Manzilingiz",
@@ -60,7 +61,7 @@
   },
   "modalSuccess":{
     "title":"Rahmat!",
-    "desc":"Buyurtmangiz muvaffaqiyatli ro’yxatdan o’tdi. Yaqin vaqt oralig’ida siz bilan bog’lanamiz"
+    "desc":"Buyurtmangiz muvaffaqiyatli ro’yxatdan o’tdi.\n Yaqin vaqt oralig’ida siz bilan bog’lanamiz"
   },
   "consultationModal":{
     "title": "Konsultatsiya olish",

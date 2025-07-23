@@ -1,43 +1,79 @@
-import { CloseIcon, UserIcon } from '@/assets/icons'
-import { postRequest } from '@/service/getRequest'
-import { useTranslations } from 'next-intl'
-import { FormEvent } from 'react'
-import toast from 'react-hot-toast'
+import { CloseIcon, UserIcon } from "@/assets/icons";
+import { postRequest } from "@/service/getRequest";
+import { useTranslations } from "next-intl";
+import { FormEvent } from "react";
+import toast from "react-hot-toast";
 
-const KonsultationCreate = ({setCreate}: {setCreate: React.Dispatch<React.SetStateAction<boolean>>}) => {
-    const t = useTranslations("orderModal")
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-  e.preventDefault()
-  const form = e.target as HTMLFormElement
-  const name = (form.username as HTMLInputElement).value
-  const phone = (form.phone as HTMLInputElement).value
-  const payload = { name, phone }
-  
-  try {
-    const res = await postRequest('/consultation', payload).then(res => {
-      toast.success('Siz konsultatsiyangiz qabul qilindi')
-      setCreate(false)}).catch(err => toast.error(err.message))
-    console.log(res);
-  } catch (err) {
-    toast.error('Xatolik yuz berdi')
-  }
-}
+const KonsultationCreate = ({
+  setCreate,
+}: {
+  setCreate: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+  const t = useTranslations("orderModal");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const name = (form.username as HTMLInputElement).value;
+    const phone = (form.phone as HTMLInputElement).value;
+    const payload = { name, phone };
+
+    try {
+      await postRequest("/consultation", payload)
+        .then(() => {
+          toast.success("Sizning konsultatsiyangiz qabul qilindi");
+          setCreate(false);
+        })
+        .catch((err) => toast.error(err.message));
+    } catch (err) {
+      toast.error("Xatolik yuz berdi");
+    }
+  };
+
   return (
-    <div className='fixed z-[11] inset-0 backdrop-filter bg-black/30 backdrop-blur-[4px] flex items-center justify-center'>
-        <div className='w-[450px] justify-center h-[550px] bg-white flex rounded-[30px] gap-[50px] relative px-[40px] py-[22px]'>
-            <div onClick={() => setCreate(false)} className='absolute cursor-pointer top-[20px] right-[30px]'>
-                <CloseIcon/>
-            </div>
-            <form onSubmit={handleSubmit} className='flex flex-col gap-[20px] items-center'>
-                <UserIcon/>
-                <span className='text-[25px] font-bold'>Konsultatsiya olish</span>
-                <input aria-required name="username" required className="w-[360px] h-[60px] border-[1px] outline-none text-center text-[#3d3c3c] border-[#CBCBCB] rounded-[17px] text-[25px] !font-bold px-[20px] shadow-2xl" type="text" placeholder={t("inputText1")}/>
-                <input aria-required name="phone" required className="w-[360px] h-[60px] border-[1px] outline-none text-center text-[#3d3c3c] border-[#CBCBCB] rounded-[17px] text-[25px] !font-bold px-[20px] shadow-2xl" type="text" placeholder={t("inputText2")}/>
-            <button type='submit' className='bg-[#FFE600] w-[237px] h-[40px] mt-[30px] text-[20px] items-center  cursor-pointer hover:bg-gray-500 transition-colors px-[8px] py-1 rounded-tr-[10px] rounded-[10px] font-bold'>{t("button")}</button>
-            </form>
-        </div>
-    </div>
-  )
-}
+    <div className="fixed z-[999] inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center px-4">
+      <div className="w-full max-w-[450px] bg-white rounded-[30px] relative px-6 py-8 shadow-2xl">
+        <button
+          onClick={() => setCreate(false)}
+          className="absolute top-4 right-4 text-gray-600 hover:text-black transition"
+          aria-label="Yopish"
+        >
+          <CloseIcon />
+        </button>
 
-export default KonsultationCreate
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col items-center gap-5"
+        >
+          <UserIcon />
+          <h2 className="text-[22px] md:text-[25px] font-bold text-center">
+            {t("title") || "Konsultatsiya olish"}
+          </h2>
+
+          <input
+            name="username"
+            required
+            className="w-full h-[55px] border border-[#CBCBCB] rounded-[17px] text-center text-[18px] md:text-[20px] font-medium px-4 shadow-md"
+            type="text"
+            placeholder={t("inputText1")}
+          />
+          <input
+            name="phone"
+            required
+            className="w-full h-[55px] border border-[#CBCBCB] rounded-[17px] text-center text-[18px] md:text-[20px] font-medium px-4 shadow-md"
+            type="text"
+            placeholder={t("inputText2")}
+          />
+          <button
+            type="submit"
+            className="bg-[#FFE600] hover:bg-gray-500 transition-colors w-[220px] h-[45px] rounded-[10px] font-bold text-[16px] md:text-[18px] mt-4"
+          >
+            {t("button")}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default KonsultationCreate;

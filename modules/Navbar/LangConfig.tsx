@@ -1,5 +1,4 @@
 "use client"
-import { EnIcon, RuIcon, UzbIcon } from '@/assets/icons'
 import { usePathname, useRouter } from '@/i18n/navigation'
 import { getCookie } from 'cookies-next'
 import React, { ReactNode, useEffect,useState } from 'react'
