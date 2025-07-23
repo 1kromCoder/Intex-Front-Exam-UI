@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import LangConfig from "./LangConfig";
 
 const Navbar = () => {
   return (
@@ -12,6 +13,7 @@ const Navbar = () => {
         </ul>
         <ul className="flex items-center gap-[15px] pt-[10px]">
           <li className="text-[20px] font-bold"><a href="#">(99) 911 02 04</a></li>
+          <LangConfig />
           <li>
             <Link href={"/#"}>
               <img src={"/Teleg.png"}></img>
