@@ -6,7 +6,6 @@ import React, { ReactNode, useEffect,useState } from 'react'
 
 interface LangType {
     id: number,
-    icon: ReactNode,
     title: string,
     content: string
 }
@@ -15,8 +14,8 @@ const LangConfig = () => {
     const pathname = usePathname()
     const b = getCookie("NEXT_LOCALE")
     const langList: LangType[] = [
-        { id: 1, icon: <RuIcon />, title: "ru", content: "Ру" },
-        { id: 2, icon: <UzbIcon />, title: "uz", content: "O'z" }
+        { id: 1, title: "ru", content: "RU" },
+        { id: 2, title: "uz", content: "UZ" }
     ]
     const [lang, setLang] = useState<LangType>(langList[0])
     function handleChangeLang(item: LangType) {
@@ -30,15 +29,13 @@ const LangConfig = () => {
         }
     }, [])
     return (
-        <div className='lang-wrapper py-3 relative cursor-pointer'>
-            <div className='flex  items-center gap-2 text-[16px] font-semibold'>
-                <div className='w-[20px] h-[20px] rounded-full overflow-hidden'>{lang.icon}</div>
+        <div className='lang-wrapper w-[25px] flex items-center justify-center h-[25px] p-3 relative cursor-pointer bg-amber-50 text-[#00979C] rounded-[3px] mb-[8px]'>
+            <div className=' text-[15px] font-semibold'>
                 <span>{lang.content}</span>
             </div>
-            <div className='h-0 lang-popup overflow-hidden duration-300 space-y-1 absolute left-[-15px] top-[50px]  rounded-md bg-[var(--clr-violet)]'>
+            <div className='h-0 lang-popup overflow-hidden duration-300 space-y-1 absolute left-[-15px] top-[50px]  rounded-md bg-[#00979C]'>
                 {langList.filter((item: LangType) => item.id != lang.id).map((item: LangType) => (
-                    <div onClick={() => handleChangeLang(item)} key={item.id} className='flex hover:bg-white hover:text-[var(--clr-violet)] p-2 rounded-md items-center gap-2 text-[14px] font-semibold'>
-                        <div className='w-[20px] h-[20px] overflow-hidden rounded-full'>{item.icon}</div>
+                    <div onClick={() => handleChangeLang(item)} key={item.id} className='flex bg-white hover:text-[#00979C] p-2 rounded-md items-center gap-2 text-[14px] font-semibold'>
                         <span>{item.content}</span>
                     </div>
                 ))}

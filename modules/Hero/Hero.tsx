@@ -9,7 +9,7 @@ import Intex from "../Intex/Intex";
 const Hero = () => {
   return (
     <div>
-      <img src="/img.png" alt="Hero Img" width={1520} height={1200} />
+      <img src="/bg.svg" alt="Hero Img" width={1520} height={1200} />
       <Sotuv />
       <Ramca />
       <Shish />

@@ -14,7 +14,11 @@ html{
     flex: 1;
   }
   
-  .lang-wrapper:hover > .lang-popup {
+.lang-wrapper:hover > .lang-popup {
     height: 60px;
     padding: 8px;
-  }
+}
+
+  /* global.css */
+
+

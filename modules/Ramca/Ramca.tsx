@@ -1,12 +1,14 @@
 import Card from "@/components/Card";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const Ramca = () => {
+  const t = useTranslations("FramePoolsPart")
   return (
     <div id="ramkali">
       <div className="bg-[#009398] text-center px-[458px] py-[23px] mt-[98px]">
         <h1 className="text-white text-[50px] font-bold ">
-          Ramkali basseynlar
+          {t("title")}
         </h1>
       </div>
       <div className="bg-[#f8f8f8] px-[166px] py-[96px] flex flex-wrap gap-[44px]">
