@@ -1,15 +1,15 @@
 import { Footer, Hero, Navbar } from '@/modules'
+import { getRequest } from '@/service/getRequest'
 import { ReactNode } from 'react'
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = async ({ children }: { children: ReactNode }) => {
+    const sites = await getRequest('/site')
+    const category = await getRequest('/category')
     return (
         <>
-            <Navbar />
+            <Navbar site={sites} category={category.data}/>
             <Hero/>
-            {/* <main className="site-main mt-[99px]">
-                {children}
-            </main> */}
-            <Footer />
+            <Footer site={sites} />
         </>
     )
 }

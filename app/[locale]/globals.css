@@ -2,12 +2,33 @@
 
 
 html{
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  background-color: var(--clr-mainBg);
+  }
+  
+  body {
+    background-color: var(--clr-mainBg);
 }
 
 :root {
+  --clr-mainBg: #f8f8f8;
+    --clr-bg: #009398;
     --clr-violet: #a259ff;
-    --clr-grey: #3B3B3B
+    --clr-grey: gray;
+      --clr-text: #009398;
+      --clr-card: #FFFF;
+      --clr-prCard: #FFFF;
+      --clr-text: #0f1527;
+    }
+    
+    .mode {
+      --clr-bg: #0f1527;
+      --clr-violet: #a259ff;
+      --clr-grey: red;
+      --clr-prCard: #bdcbd1;
+      --clr-text: #FFFF;
+      --clr-mainBg: #252e45;
+      --clr-card: #0e2260ed;
   }
 
 .site-main {
@@ -18,7 +39,3 @@ html{
     height: 60px;
     padding: 8px;
 }
-
-  /* global.css */
-
-

@@ -5,47 +5,47 @@ const Intex = () => {
   const t = useTranslations("InTashkent")
   return (
     <div className="mb-[80px]">
-      <div className="bg-[#E2EFEF] text-center px-[235px] py-[20px]">
-        <h1 className="text-[#009398] text-[50px] font-bold ">
+      <div className="bg-[var(--clr-bg)] text-center px-[235px] py-[20px]">
+        <h1 className="!text-[#E2EFEF] text-[50px] font-bold ">
           {t('title')}
         </h1>
       </div>
       <div className="flex gap-[80px] px-[160px] ">
         <div className="py-[80px]">
-          <p className="text-black w-[503px] h-[262px] text-[25px] font-normal">
+          <p className="text-[var(--clr-text)] w-[503px] h-[262px] text-[25px] font-normal">
             {t('desc')}
           </p>
         </div>
         <div className="pt-[80px] flex flex-col gap-[50px]">
-          <p className="text-black w-[500px] h-[85px] text-[25px] font-normal">
+          <p className="text-[var(--clr-text)] w-[500px] h-[85px] text-[25px] font-normal">
             {t('desc2')}
           </p>
           <div>
             <div className="flex items-center gap-[10px]">
               <CheckIcon />
-              <p className="text-black text-[25px] font-normal">{t('text')}</p>
+              <p className="text-[var(--clr-text)] text-[25px] font-normal">{t('text')}</p>
             </div>
             <div className="flex items-center gap-[10px]">
               <CheckIcon />
-              <p className="text-black text-[25px] font-normal">
+              <p className="text-[var(--clr-text)] text-[25px] font-normal">
               {t('text2')}
               </p>
             </div>
             <div className="flex items-center gap-[10px]">
               <CheckIcon />
-              <p className="text-black text-[25px] font-normal">
+              <p className="text-[var(--clr-text)] text-[25px] font-normal">
               {t('text3')}
               </p>
             </div>
             <div className="flex items-center gap-[10px]">
               <CheckIcon />
-              <p className="text-black text-[25px] font-normal">
+              <p className="text-[var(--clr-text)] text-[25px] font-normal">
               {t('text4')}
               </p>
             </div>
             <div className="flex items-center gap-[10px]">
               <CheckIcon />
-              <p className="text-black text-[25px] font-normal">
+              <p className="text-[var(--clr-text)] text-[25px] font-normal">
                 {t('text5')}
               </p>
             </div>

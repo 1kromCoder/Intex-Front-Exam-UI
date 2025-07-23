@@ -7,8 +7,8 @@ const Mijoz = () => {
 
   return (
     <div>
-      <div className="bg-[#E2EFEF] text-center px-[458px] py-[23px] mt-[98px]">
-        <h1 className="text-[#009398] text-[50px] font-bold ">
+      <div className="bg-[var(--clr-bg)] text-center px-[458px] py-[23px] mt-[98px]">
+        <h1 className="text-[#E2EFEF] text-[50px] font-bold ">
           {t("title")}
         </h1>
       </div>
@@ -22,8 +22,8 @@ const Mijoz = () => {
             className="object-contain"
           />
           <div className="flex flex-col w-[245px] h-[125px]">
-            <span className="text-black text-[40px] font-bold">{t('conTitle1')}</span>
-            <p className="text-[20px] font-normal text-black">
+            <span className="text-[var(--clr-text)] text-[40px] font-bold">{t('conTitle1')}</span>
+            <p className="text-[20px] font-normal text-[var(--clr-text)]">
               {t('conDesc1')}
             </p>
           </div>
@@ -36,10 +36,10 @@ const Mijoz = () => {
               className="object-contain"
             />
             <div className="flex flex-col w-[302px] h-[148px]">
-              <span className="text-black text-[40px] font-bold">
+              <span className="text-[var(--clr-text)] text-[40px] font-bold">
               {t('conTitle2')}
               </span>
-              <p className="text-[20px] font-normal text-black">
+              <p className="text-[20px] font-normal text-[var(--clr-text)]">
               {t('conDesc2')}
               </p>
             </div>
@@ -53,10 +53,10 @@ const Mijoz = () => {
               className="object-contain"
             />
             <div className="flex flex-col w-[208px] h-[148px]">
-              <span className="text-black text-[40px] font-bold">
+              <span className="text-[var(--clr-text)] text-[40px] font-bold">
               {t('conTitle3')}
               </span>
-              <p className="text-[20px] font-normal text-black">
+              <p className="text-[20px] font-normal text-[var(--clr-text)]">
               {t('conDesc3')}
               </p>
             </div>
