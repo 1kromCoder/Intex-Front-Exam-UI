@@ -8,8 +8,8 @@ const Intex = () => {
   return (
     <div className="mb-20">
       {/* Title */}
-      <div className="bg-[#E2EFEF] text-center py-6 px-4 md:px-8 lg:px-[235px]">
-        <h1 className="text-[var(--clr-bg)] text-[28px] md:text-[40px] lg:text-[50px] font-bold">
+      <div className="bg-[var(--clr-mijoz)] text-center py-6 px-4 md:px-8 lg:px-[235px]">
+        <h1 className="text-[var(--clr-mijozTxt)] text-[28px] md:text-[40px] lg:text-[50px] font-bold">
           {t("title")}
         </h1>
       </div>

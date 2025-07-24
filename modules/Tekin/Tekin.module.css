@@ -1,0 +1,18 @@
+.slideInContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  background: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  animation: slideIn 0.5s ease-out forwards;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}

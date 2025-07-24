@@ -1,7 +1,8 @@
+"use client";
 import { CloseIcon, MapIcon } from "@/assets/icons";
 import { API } from "@/service/getEnv";
 import { ProductType } from "@/types/ProductType";
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState, useEffect } from "react";
 import { formatPrice } from "./Formatter";
 import { useTranslations } from "next-intl";
 import { postRequest } from "@/service/getRequest";
@@ -15,6 +16,13 @@ const OrderCreate = ({
   setCreate: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const t = useTranslations("orderModal");
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Trigger animation on mount
+  useEffect(() => {
+    setIsVisible(true);
+    return () => setIsVisible(false); // Clean up on unmount
+  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,11 +42,17 @@ const OrderCreate = ({
       const res = await postRequest("/order", payload);
       if (res) {
         toast.success("Sizning buyurtmangiz qabul qilindi");
-        setCreate(false);
+        setIsVisible(false);
+        setTimeout(() => setCreate(false), 300); // Delay to allow exit animation
       }
     } catch (err) {
       toast.error("Xatolik yuz berdi");
     }
+  };
+
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(() => setCreate(false), 300); // Delay to allow exit animation
   };
 
   const productTitle =
@@ -47,12 +61,20 @@ const OrderCreate = ({
       : item.frame_ru;
 
   return (
-    <div className="fixed z-[999] inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center px-4">
-      <div className="bg-white w-full max-w-[1130px] max-h-[95vh] overflow-y-auto rounded-[30px] p-6 md:p-10 flex flex-col md:flex-row gap-6 relative shadow-2xl">
+    <div
+      className={`fixed z-[999] inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center px-4 transition-opacity duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <div
+        className={`bg-[var(--clr-card)] w-full max-w-[1130px] max-h-[95vh] overflow-y-auto rounded-[30px] p-6 md:p-10 flex flex-col md:flex-row gap-6 relative shadow-2xl transform transition-transform duration-300 ${
+          isVisible ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
         {/* Close Button */}
         <button
-          onClick={() => setCreate(false)}
-          className="absolute top-4 right-4 text-gray-600 hover:text-black transition"
+          onClick={handleClose}
+          className="absolute top-4 right-4 text-[var(--clr-text)] hover:text-black transition"
           aria-label="Modalni yopish"
         >
           <CloseIcon />
@@ -60,7 +82,7 @@ const OrderCreate = ({
 
         {/* Left: Product Info */}
         <div className="md:w-1/2 w-full flex flex-col items-center text-center gap-4">
-          <h2 className="text-[24px] md:text-[30px] font-bold text-[var(--clr-bg)]">
+          <h2 className="text-[24px] md:text-[30px] font-bold text-[var(--clr-mijozTxt)]">
             {productTitle}
           </h2>
           <img
@@ -68,7 +90,7 @@ const OrderCreate = ({
             src={`${API}/file/${item.image}`}
             alt={productTitle}
           />
-          <span className="text-[24px] md:text-[28px] mt-4 font-bold text-gray-800">
+          <span className="text-[24px] md:text-[28px] mt-4 font-bold text-[var(--clr-mijozTxt)]">
             {formatPrice(item.discountedPrice)} сум
           </span>
         </div>
@@ -81,14 +103,14 @@ const OrderCreate = ({
           <input
             name="username"
             required
-            className="w-full max-w-[360px] h-[55px] border border-[#CBCBCB] rounded-[17px] text-[18px] text-[#3d3c3c] font-medium px-4 shadow-md outline-none"
+            className="w-full max-w-[360px] h-[55px] border border-[#CBCBCB] rounded-[17px] text-[18px] text-[var(--clr-input)] font-medium px-4 shadow-md outline-none"
             type="text"
             placeholder={t("inputText1")}
           />
           <input
             name="phone"
             required
-            className="w-full max-w-[360px] h-[55px] border border-[#CBCBCB] rounded-[17px] text-[18px] text-[#3d3c3c] font-medium px-4 shadow-md outline-none"
+            className="w-full max-w-[360px] h-[55px] border border-[#CBCBCB] rounded-[17px] text-[18px] text-[var(--clr-input)] font-medium px-4 shadow-md outline-none"
             type="text"
             placeholder={t("inputText2")}
           />
@@ -96,11 +118,11 @@ const OrderCreate = ({
             <input
               name="address"
               required
-              className="flex-1 h-[55px] border border-[#CBCBCB] rounded-[17px] text-[18px] text-[#3d3c3c] font-medium px-4 shadow-md outline-none"
+              className="flex-1 h-[55px] border border-[#CBCBCB] rounded-[17px] text-[18px] text-[var(--clr-input)] font-medium px-4 shadow-md outline-none"
               type="text"
               placeholder={t("inputText3")}
             />
-            <div className="w-[60px] h-[55px] flex items-center justify-center border border-[#CBCBCB] rounded-[17px] shadow-md">
+            <div className="w-[60px] h-[55px] flex items-center text-[var(--clr-mijozTxt)] justify-center border border-[#CBCBCB] rounded-[17px] shadow-md">
               <MapIcon />
             </div>
           </div>

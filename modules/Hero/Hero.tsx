@@ -13,7 +13,7 @@ const Hero = async() => {
   return (
     <div className="bg-[--clr-mainBg]">
       <Toaster position="top-center" />
-      <img src="/bg.svg" alt="Hero Img" width={1520} height={1200} />
+      <img src="/bg.svg" alt="Hero Img" className="w-full" />
       <Sotuv />
       <CategoryProducts products={products.data} category={category.data}/>
       <Tekin />

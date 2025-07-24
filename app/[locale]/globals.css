@@ -8,6 +8,7 @@ html{
   
   body {
     background-color: var(--clr-mainBg);
+    overflow-x: hidden;
 }
 
 :root {
@@ -19,6 +20,9 @@ html{
       --clr-card: #FFFF;
       --clr-prCard: #FFFF;
       --clr-text: #0f1527;
+      --clr-mijoz: #E2EFEF;
+        --clr-mijozTxt: #009398;
+        --clr-input: #3d3c3c;
     }
     
     .mode {
@@ -29,6 +33,9 @@ html{
       --clr-text: #FFFF;
       --clr-mainBg: #252e45;
       --clr-card: #0e2260ed;
+      --clr-mijoz: #0f1527;
+        --clr-mijozTxt: #FFF;
+        --clr-input: #FFF;
   }
 
 .site-main {

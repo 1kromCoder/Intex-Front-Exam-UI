@@ -8,8 +8,8 @@ const Mijoz = () => {
   return (
     <div className="mt-16">
       {/* Title */}
-      <div className="bg-[#E2EFEF] w-full text-center py-6 px-4 md:px-10 lg:px-[200px]">
-        <h1 className="text-[var(--clr-bg)] text-[28px] md:text-[40px] lg:text-[50px] font-bold">
+      <div className="bg-[var(--clr-mijoz)] w-full text-center py-6 px-4 md:px-10 lg:px-[200px]">
+        <h1 className="text-[var(--clr-mijozTxt)] text-[28px] md:text-[40px] lg:text-[50px] font-bold">
           {t("title")}
         </h1>
       </div>
